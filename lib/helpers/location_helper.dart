@@ -13,6 +13,7 @@ class LocationHelper {
     final url =
         'https://maps.googleapis.com/maps/api/geocode/json?latlng=$lat,$lng&key=$GOOGLE_API_KEY';
     final response = await http.get(url);
-    return json.decode(response.body)['results'][0]['formated_address'];
+    print(json.decode(response.body)['results'][0]);
+    return json.decode(response.body)['results'][0]['formatted_address'];
   }
 }
