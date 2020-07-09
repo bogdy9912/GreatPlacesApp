@@ -8,7 +8,7 @@ class DBHelper {
       path.join(dbPath, 'places.db'),
       onCreate: (db, version) {
         String sql =
-            'CREATE TABLE user_places(id TEXT PRIMARY KEY, title TEXT,image TEXT)';
+            'CREATE TABLE user_places(id TEXT PRIMARY KEY, title TEXT, image TEXT, loc_lat REAL, loc_lng REAL, address TEXT)';
         return db.execute(sql);
       },
       version: 1,
